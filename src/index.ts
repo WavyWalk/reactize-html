@@ -1,1 +1,1 @@
-export {test} from './playground'
+export {reactComponents} from './playground'
