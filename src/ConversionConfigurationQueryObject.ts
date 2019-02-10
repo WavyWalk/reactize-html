@@ -13,7 +13,7 @@ export class ConversionConfigurationQueryObject {
     }
 
     getConversionOptionsForTag(tagName: string): ConversionOptions | null {
-        return this.conversionConfiguration.convertOptions[tagName] || null
+        return this.conversionConfiguration.convertOptions[tagName] as ConversionOptions || null
     }
 
     shouldAttributeBeSkipped(tagName: string, attributeName: string): boolean {
@@ -48,8 +48,8 @@ export class ConversionConfigurationQueryObject {
         return !!conversionOptionsForAnyTag.userDefinedHandler
     }
 
-    applyUserDefinedHandler(tagName: string, params: { [p: string]: any }, children: any): HandlerResult {
+    applyUserDefinedHandler(tagName: string, params: { [p: string]: any }, children: any): HandlerResult | void {
         const conversionOptionsForTag = this.getConversionOptionsForTag(tagName) || this.getConversionOptionsForTag(ConversionConfigurationQueryObject.ANY_TAG)
-        return conversionOptionsForTag!.userDefinedHandler!(params, children)
+        return (conversionOptionsForTag as ConversionOptions)!.userDefinedHandler!(params, children)
     }
 }

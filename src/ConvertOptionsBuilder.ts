@@ -21,7 +21,7 @@ export class ConvertOptionsBuilder {
         return this
     }
 
-    applyHandler(proc: (params: { [key: string]: any }, children: (Array<ReactComponentElement<any>> | ReactComponentElement<any> | null)) => HandlerResult) {
+    applyHandler(proc: (params: { [key: string]: any }, children: (Array<ReactComponentElement<any>> | ReactComponentElement<any> | null)) => HandlerResult | void) {
         this.convertOptions.userDefinedHandler = proc
         return this
     }

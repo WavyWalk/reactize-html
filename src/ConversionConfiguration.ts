@@ -2,10 +2,10 @@ import {ConversionOptions} from "./ConversionOptions";
 import {element} from "prop-types";
 
 
-interface IConvertOptionsObject {
-    [tagName:string]:any//ConversionOptions
-    blacklistedTags?: {[tagName:string]:boolean} | Array<string>
-    whitelistedTags?: {[index:string]:boolean} | Array<string>
+ interface IConvertOptionsObject {
+    [id:string]: ConversionOptions | Array<string> | {[key:string]:boolean} | undefined
+    blacklistedTags?: Array<string> | ConversionOptions | {[key:string]:boolean}
+    whitelistedTags?: Array<string> | ConversionOptions | {[key:string]:boolean}
 }
 
 export class ConversionConfiguration {

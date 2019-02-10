@@ -12,7 +12,6 @@ export class ConversionOptions {
         (
             params: { [p: string]: any },
             children: (Array<React.ReactComponentElement<any>> | React.ReactComponentElement<any> | null)
-        ) => HandlerResult
+        ) => HandlerResult | void
         ) | null = null
-
 }

@@ -34,8 +34,6 @@ export class HtmlToReactComponentsConverter {
     }
 
     private createChildren(node: Node): Array<ReactChild> | ReactChild | null {
-        console.log('--------create-------children')
-        console.dir(node)
         // is #text node
         if (this.isChildNodesEmpty(node)) {
             return node.nodeValue!
@@ -78,7 +76,9 @@ export class HtmlToReactComponentsConverter {
 
         if (this.conversionConfigurationQueryObject.shouldUserDefinedHandlerBeApplied(tagName)) {
             let handlerResult = this.conversionConfigurationQueryObject.applyUserDefinedHandler(tagName, params, children as any)
-            if (handlerResult.shouldIgnore) {
+            if (!handlerResult) {
+                //do nothing
+            } else if (handlerResult.shouldIgnore) {
                 return null
             } else if (handlerResult.paramsToReplaceWith) {
                 params = handlerResult.paramsToReplaceWith
