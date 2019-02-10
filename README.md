@@ -5,11 +5,12 @@ or include it to packagejson
 # dependencies
 no dependencies. Supposed to be used in Typescript applications only.
 
-#Why
-Sometimes you need to render raw html as react components, and replace some html elements with your components.
-With this lib you can parse html to react elements.
+# Why
+Sometimes you need to render raw html as react components, or replace some html elements with your components instead of
+using old school stuff on that html (like attaching listeners, modifying html by hand via js, or god save use jquery).
+With this lib you can parse html to react elements and more.
 
-#Guide
+# Guide
 For simply converting html to components:
 
 `HtmlToReactComponentsConverter.convert(htmlString)`
@@ -94,8 +95,6 @@ let reactElements = HtmlToReactComponentsConverter.convert(html, new ConversionC
  `
 ```
 
-Pretty useful in scenarios where you have for example a post stored with html, and you want to enhance it with your 
-components.
 
 
 

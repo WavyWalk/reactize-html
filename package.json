@@ -1,6 +1,6 @@
 {
   "name": "reactize-html",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "converts elements to react components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
